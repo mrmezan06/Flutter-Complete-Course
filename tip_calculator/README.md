@@ -1,9 +1,4 @@
 # tip_calculator
-
-A new Flutter project.
-
-## Getting Started
-
 ## Learning Concepts are -
 - Card
 - Custom Color
