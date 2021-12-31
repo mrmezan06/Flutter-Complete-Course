@@ -19,3 +19,10 @@
             - stop debug mode
         - scaffoldBackgroundColor
             - app body color customization
+        - foregroundColor
+            - Title color can be changed
+        - centerTitle
+            - Center the title
+- Image
+    - Color
+        - Transparent image can be changed its color of the image

@@ -6,9 +6,23 @@ void main() {
   runApp(MaterialApp(
     theme: ThemeData.dark().copyWith(
       appBarTheme:AppBarTheme(
-        backgroundColor: Color(0xff071953),
+        backgroundColor: Colors.lightBlue[800],//Color(0xff071953)
+        //foregroundColor: Colors.greenAccent
       ),
       scaffoldBackgroundColor: Color(0xff0a0e21),
+      textTheme: TextTheme(
+        /*
+        headline1: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Colors.greenAccent,
+        ),
+        */
+        bodyText2: TextStyle(
+          fontSize: 16.9,
+          //color: Colors.greenAccent,
+        ),
+      )
     ),
     home: Quiz(),
     debugShowCheckedModeBanner: false,
@@ -68,6 +82,7 @@ class _QuizState extends State<Quiz> {
                   "images/flag.png",
                   width: 250,
                   height: 180,
+                  color: Colors.white,
                 )),
             Padding(
               padding: const EdgeInsets.all(12.0),
@@ -84,7 +99,7 @@ class _QuizState extends State<Quiz> {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         questionBank[_currentQuestionIndex].questionText,
-                        style: TextStyle(fontSize: 16.9, color: Colors.white),
+                        //style: TextStyle(fontSize: 16.9, color: Colors.white),
                       ),
                     )),
               ),
