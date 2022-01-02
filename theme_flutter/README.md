@@ -54,3 +54,6 @@
           )`
     - Global fontFamily changed -
         - `baseTheme.copyWith(ThemeProperty).apply(fontFamily: "Lobster");`
+- Resource
+  - [Fonts Google](https://fonts.google.com/)
+  - [MaterialIO](https://material.io/)  
