@@ -2,28 +2,81 @@ import 'package:flutter/material.dart';
 
 import 'model/question.dart';
 
+final ThemeData _appTheme = _buildAppTheme();
+
+ThemeData _buildAppTheme() {
+
+  final ThemeData base =  ThemeData.dark();
+
+  return base.copyWith(
+    brightness: Brightness.light,
+    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.amber),
+    primaryColor: Colors.green,
+    scaffoldBackgroundColor: Colors.red,
+    backgroundColor: Colors.amber,
+    appBarTheme:const AppBarTheme(
+      backgroundColor: Colors.redAccent,//Color(0xff071953)
+      //foregroundColor: Colors.greenAccent
+    ),
+    textTheme: _appTextTheme(base.textTheme) /*const TextTheme(
+      bodyText1: TextStyle(
+        fontSize: 16.9,
+        color: Colors.white,
+      )
+    )*/
+
+  );
+
+}
+
+TextTheme _appTextTheme(TextTheme base){
+  return base.copyWith(
+    headline1: base.headline1?.copyWith(
+      fontWeight: FontWeight.w500,
+    ),
+    subtitle1: base.subtitle1?.copyWith(
+      fontSize: 18.0
+    ),
+    caption: base.caption?.copyWith(
+      fontWeight: FontWeight.w400,
+      fontSize: 14.0
+    ),
+    button: base.button?.copyWith(
+      letterSpacing: 1.2,
+      //fontSize: 23.9,
+      //fontFamily: "Lobster",
+    ),
+    bodyText2: base.bodyText2?.copyWith(
+      fontSize: 16.9,
+      //fontFamily: "Lobster",
+      color: Colors.white,
+    )
+  ).apply(fontFamily: "Lobster");
+}
+
 void main() {
   runApp(MaterialApp(
-    theme: ThemeData.dark().copyWith(
+    theme: _appTheme,
+    /*theme: ThemeData.dark().copyWith(
       appBarTheme:AppBarTheme(
         backgroundColor: Colors.lightBlue[800],//Color(0xff071953)
         //foregroundColor: Colors.greenAccent
       ),
       scaffoldBackgroundColor: Color(0xff0a0e21),
       textTheme: TextTheme(
-        /*
+        *//*
         headline1: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: Colors.greenAccent,
         ),
-        */
+        *//*
         bodyText2: TextStyle(
           fontSize: 16.9,
           //color: Colors.greenAccent,
         ),
       )
-    ),
+    ),*/
     home: Quiz(),
     debugShowCheckedModeBanner: false,
   ));
