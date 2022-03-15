@@ -8,3 +8,6 @@
     - <img src="container2.png" height="300" width="150" max-width="30%">
     - <img src="elevatedbutton.png" height="300" width="150" max-width="30%">
     - <img src="textbutton.png" height="300" width="150" max-width="30%">
+    - <img src="icons.png" height="300" width="150" max-width="30%">
+    - <img src="iconbutton.png" height="300" width="150" max-width="30%">
+    - <img src="image.png" height="300" width="150" max-width="30%">
