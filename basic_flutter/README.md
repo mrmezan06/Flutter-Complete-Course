@@ -114,7 +114,7 @@
       - onZoom Out ()
           - <img src="interactivezoomout.jpg" height="300" width="150" max-width="30%">   
 
-    - onWindow ()
+      - onWindow ()
           - <img src="interactive_window.png" height="300" width="150" max-width="30%">
 
   - ### Table Widget
