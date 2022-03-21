@@ -118,3 +118,6 @@
 
   - ### Table Widget
       - <img src="checkboxlisttile.png" height="300" width="150" max-width="30%">
+
+  - ### Selectable Text
+      - <img src="selectabletex.png" height="300" width="150" max-width="30%">  
