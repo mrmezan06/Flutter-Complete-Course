@@ -1,11 +1,11 @@
-import 'package:basic_flutter/InkWell%20Widget.dart';
-import 'package:basic_flutter/TableWidget.dart';
 import 'package:flutter/material.dart';
+
+import 'InteractiveViewerWidget.dart';
 
 
 void main() {
   runApp(const MaterialApp(
-    home: InkWellWidget(),
+    home: InteractiveViewerWidget(),
     debugShowCheckedModeBanner: false,
   ));
 }

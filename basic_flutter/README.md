@@ -104,5 +104,12 @@
       - onDoubleTap()
           - <img src="inkwell_onDoubleTap.png" height="300" width="150" max-width="30%">  
       - onLongPress()
-        - <img src="inkwell_onLongPress.png" height="300" width="150" max-width="30%"> 
+          - <img src="inkwell_onLongPress.png" height="300" width="150" max-width="30%"> 
+
+  - ### InkWell
+      - onZoom In()
+          - <img src="interactive_zoomin.png" height="300" width="150" max-width="30%">
+
+      - onZoom Out ()
+          - <img src="interactive_zoomout.png" height="300" width="150" max-width="30%">   
   
