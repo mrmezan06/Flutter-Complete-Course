@@ -69,3 +69,9 @@
       
     - Without Fit And Height
       - <img src="flexiblewithoutfitandheight.png" height="300" width="150" max-width="30%">
+  - ### Future Builder
+    - Without Error
+      - <img src="futurewithouterror.png" height="300" width="150" max-width="30%">
+
+    - With Error
+      - <img src="futurewitherror.png" height="300" width="150" max-width="30%">
