@@ -67,5 +67,5 @@
     - Without Fit
       - <img src="flexiblewithoutfit.png" height="300" width="150" max-width="30%">
       
-    - Without Fit
+    - Without Fit And Height
       - <img src="flexiblewithoutfitandheight.png" height="300" width="150" max-width="30%">
