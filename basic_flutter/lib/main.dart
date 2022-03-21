@@ -1,6 +1,7 @@
 import 'package:basic_flutter/Expanded.dart';
 import 'package:basic_flutter/FlexibleWidget.dart';
 import 'package:basic_flutter/FutureBuilder.dart';
+import 'package:basic_flutter/StackWidget.dart';
 import 'package:basic_flutter/bottom_navigation_bar.dart';
 import 'package:basic_flutter/gridpaper.dart';
 import 'package:basic_flutter/modal_bottom_sheet.dart';
@@ -13,7 +14,7 @@ import 'animation.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: SpreadOperatorWidget(),
+    home: StackWidget(),
     debugShowCheckedModeBanner: false,
   ));
 }

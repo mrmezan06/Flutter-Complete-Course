@@ -81,5 +81,11 @@
     
   - ### Grid Paper
       - <img src="tooltip_popmsg.png" height="300" width="150" max-width="30%">
+    
   - ### Spread Operator (...imageList)
       - <img src="spreadoperator.png" height="300" width="150" max-width="30%">
+
+  - ### Stack
+      - <img src="stack.png" height="300" width="150" max-width="30%">  
+  
+  
