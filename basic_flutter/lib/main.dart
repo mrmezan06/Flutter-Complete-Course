@@ -1,4 +1,5 @@
 import 'package:basic_flutter/Expanded.dart';
+import 'package:basic_flutter/FlexibleWidget.dart';
 import 'package:basic_flutter/bottom_navigation_bar.dart';
 import 'package:basic_flutter/modal_bottom_sheet.dart';
 import 'package:basic_flutter/pageview.dart';
@@ -8,7 +9,7 @@ import 'animation.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: ExpandedWidget(),
+    home: FlexibleWithFit(),
     debugShowCheckedModeBanner: false,
   ));
 }

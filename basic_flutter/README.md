@@ -60,3 +60,12 @@
     
   - ### Expanded
     - <img src="expanded.png" height="300" width="150" max-width="30%"> 
+  - ### Flexible
+    - With Fit
+      - <img src="flexiblewithfit.png" height="300" width="150" max-width="30%">
+    
+    - Without Fit
+      - <img src="flexiblewithoutfit.png" height="300" width="150" max-width="30%">
+      
+    - Without Fit
+      - <img src="flexiblewithoutfitandheight.png" height="300" width="150" max-width="30%">
