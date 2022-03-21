@@ -54,3 +54,6 @@
     
   - ### Modal Bottom Sheet
     - <img src="modalbottomsheet.png" height="300" width="150" max-width="30%">
+
+  - ### Animation Faded
+    - <img src="animationfaded.png" height="300" width="150" max-width="30%">  
