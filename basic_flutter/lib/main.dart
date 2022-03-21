@@ -1,3 +1,4 @@
+import 'package:basic_flutter/AlertDialogWidget.dart';
 import 'package:basic_flutter/Expanded.dart';
 import 'package:basic_flutter/FlexibleWidget.dart';
 import 'package:basic_flutter/FutureBuilder.dart';
@@ -15,7 +16,7 @@ import 'animation.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: PositionedWidget(),
+    home: AlertDialogWidget(),
     debugShowCheckedModeBanner: false,
   ));
 }
