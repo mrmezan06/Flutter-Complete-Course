@@ -1,3 +1,4 @@
+import 'package:basic_flutter/checkboxListTile.dart';
 import 'package:flutter/material.dart';
 
 import 'InteractiveViewerWidget.dart';
@@ -5,7 +6,7 @@ import 'InteractiveViewerWidget.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: InteractiveViewerWithWindow(),
+    home: CheckBoxListTileWidget(),
     debugShowCheckedModeBanner: false,
   ));
 }

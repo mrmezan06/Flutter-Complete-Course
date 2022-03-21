@@ -115,3 +115,6 @@
 
     - onWindow ()
           - <img src="interactive_window.png" height="300" width="150" max-width="30%">
+
+  - ### Table Widget
+      - <img src="checkboxlisttile.png" height="300" width="150" max-width="30%">
