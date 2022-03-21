@@ -5,13 +5,14 @@ import 'package:basic_flutter/bottom_navigation_bar.dart';
 import 'package:basic_flutter/gridpaper.dart';
 import 'package:basic_flutter/modal_bottom_sheet.dart';
 import 'package:basic_flutter/pageview.dart';
+import 'package:basic_flutter/tooltip.dart';
 import 'package:flutter/material.dart';
 
 import 'animation.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: GridPaperWidget(),
+    home: ToolTipWidget(),
     debugShowCheckedModeBanner: false,
   ));
 }

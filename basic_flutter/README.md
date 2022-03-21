@@ -77,5 +77,7 @@
       - <img src="futurewitherror.png" height="300" width="150" max-width="30%">
 
     - ### Grid Paper
-    - <img src="gridpaper.png" height="300" width="150" max-width="30%">
+      - <img src="gridpaper.png" height="300" width="150" max-width="30%">
     
+  - ### Grid Paper
+      - <img src="tooltip_popmsg.png" height="300" width="150" max-width="30%">
