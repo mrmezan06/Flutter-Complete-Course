@@ -56,4 +56,7 @@
     - <img src="modalbottomsheet.png" height="300" width="150" max-width="30%">
 
   - ### Animation Faded
-    - <img src="animationfaded.png" height="300" width="150" max-width="30%">  
+    - <img src="animationfaded.png" height="300" width="150" max-width="30%">
+    
+  - ### Expanded
+    - <img src="expanded.png" height="300" width="150" max-width="30%"> 
