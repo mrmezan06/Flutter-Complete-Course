@@ -79,7 +79,7 @@
     - ### Grid Paper
       - <img src="gridpaper.png" height="300" width="150" max-width="30%">
     
-  - ### Grid Paper
+  - ### Tool Tip
       - <img src="tooltip_popmsg.png" height="300" width="150" max-width="30%">
     
   - ### Spread Operator (...imageList)
@@ -102,16 +102,17 @@
           - <img src="inkwell_onTap.png" height="300" width="150" max-width="30%">
 
       - onDoubleTap()
-          - <img src="inkwell_onDoubleTap.png" height="300" width="150" max-width="30%">  
+          - <img src="inkwell_onDoubleTap.png" height="300" width="150" max-width="30%">
+           
       - onLongPress()
           - <img src="inkwell_onLongPress.png" height="300" width="150" max-width="30%"> 
 
-  - ### InkWell
+  - ### Interactive
       - onZoom In()
-          - <img src="interactive_zoomin.png" height="300" width="150" max-width="30%">
+          - <img src="interactive_zoomin.jpg" height="300" width="150" max-width="30%">
 
       - onZoom Out ()
-          - <img src="interactive_zoomout.png" height="300" width="150" max-width="30%">   
+          - <img src="interactive_zoomout.jpg" height="300" width="150" max-width="30%">   
 
     - onWindow ()
           - <img src="interactive_window.png" height="300" width="150" max-width="30%">
