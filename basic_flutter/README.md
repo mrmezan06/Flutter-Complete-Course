@@ -95,5 +95,14 @@
       - <img src="alertdialog.png" height="300" width="150" max-width="30%">  
 
   - ### Table Widget
-      - <img src="table.png" height="300" width="150" max-width="30%">    
+      - <img src="table.png" height="300" width="150" max-width="30%">
+
+  - ### InkWell
+      - onTap()
+          - <img src="inkwell_onTap.png" height="300" width="150" max-width="30%">
+
+      - onDoubleTap()
+          - <img src="inkwell_onDoubleTap.png" height="300" width="150" max-width="30%">  
+      - onLongPress()
+        - <img src="inkwell_onLongPress.png" height="300" width="150" max-width="30%"> 
   
