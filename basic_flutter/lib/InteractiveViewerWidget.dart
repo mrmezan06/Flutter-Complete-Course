@@ -23,3 +23,28 @@ class _InteractiveViewerWidgetState extends State<InteractiveViewerWidget> {
     );
   }
 }
+
+class InteractiveViewerWithWindow extends StatefulWidget {
+  const InteractiveViewerWithWindow({Key? key}) : super(key: key);
+
+  @override
+  State<InteractiveViewerWithWindow> createState() => _InteractiveViewerWithWindowState();
+}
+
+class _InteractiveViewerWithWindowState extends State<InteractiveViewerWithWindow> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.orangeAccent,
+      body: InteractiveViewer(
+        boundaryMargin: const EdgeInsets.all(double.infinity),
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Interactive Window'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+

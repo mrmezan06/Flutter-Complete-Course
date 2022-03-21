@@ -5,7 +5,7 @@ import 'InteractiveViewerWidget.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: InteractiveViewerWidget(),
+    home: InteractiveViewerWithWindow(),
     debugShowCheckedModeBanner: false,
   ));
 }

@@ -112,4 +112,6 @@
 
       - onZoom Out ()
           - <img src="interactive_zoomout.png" height="300" width="150" max-width="30%">   
-  
+
+    - onWindow ()
+          - <img src="interactive_window.png" height="300" width="150" max-width="30%">
