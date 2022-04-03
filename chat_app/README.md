@@ -10,3 +10,5 @@ A new Flutter project.
     - Auth Form Validation
         - <img src="auth_form_success.png" height="600" width="300" max-width=70%>
         - <img src="auth_form_failed.png" height="600" width="300" max-width=70%>
+    - Auth With Firebase SDK
+        - <img src="auth_with_firebase.png" height="600" width="300" max-width=70%>
