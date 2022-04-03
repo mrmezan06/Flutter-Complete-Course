@@ -12,3 +12,5 @@ A new Flutter project.
         - <img src="auth_form_failed.png" height="600" width="300" max-width=70%>
     - Auth With Firebase SDK
         - <img src="auth_with_firebase.png" height="600" width="300" max-width=70%>
+    - Auth Logout
+        - <img src="auth_logout.png" height="600" width="300" max-width=70%>    
