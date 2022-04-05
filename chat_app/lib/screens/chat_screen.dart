@@ -2,16 +2,23 @@ import 'package:chat_app/widgets/chat/messages.dart';
 import 'package:chat_app/widgets/chat/new_message.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
-class ChatScreen extends StatelessWidget {
+
+class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
 
   @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
-        .collection('chats/E7rtEISpcscWSJBYo3QO/messages')
-        .snapshots();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chat UI'),
@@ -38,16 +45,13 @@ class ChatScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Container(child: 
-      Column(
+      body: Container(
+          child: Column(
         children: const [
-        Expanded(
-          child: Messages()
-          ),
+          Expanded(child: Messages()),
           NewMessage(),
-      ],
-      )
-      ) ,
+        ],
+      )),
     );
   }
 }

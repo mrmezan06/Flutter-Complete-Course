@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:chat_app/widgets/auth/auth_form.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -16,7 +19,7 @@ class _AuthScreenState extends State<AuthScreen> {
   var _isLoading = false;
 
   void _submitAuthForm(String email, String password, String username,
-      bool isLogin, BuildContext context) async {
+      File image, bool isLogin, BuildContext context) async {
     UserCredential authResult;
     // Pushing Firebase in here
     try {
@@ -31,12 +34,26 @@ class _AuthScreenState extends State<AuthScreen> {
         // New user
         authResult = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
+        //Image Upload Section Start
+        final ref = FirebaseStorage.instance
+            .ref()
+            .child('user_image')
+            .child(authResult.user!.uid + '.jpg');
+        await ref.putFile(image).whenComplete(
+            () => null);
+
+        final url = await ref.getDownloadURL();
+
+        print(url);
+
+        //Image Upload Section End
         FirebaseFirestore.instance
             .collection('users')
             .doc(authResult.user!.uid)
             .set({
           'username': username,
           'email': email,
+          'image_url': url.toString(),
         });
       }
     } on PlatformException catch (error) {
@@ -68,7 +85,8 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: AuthForm(
-        submitFn: _submitAuthForm, isLoading: _isLoading,
+        submitFn: _submitAuthForm,
+        isLoading: _isLoading,
       ),
     );
   }

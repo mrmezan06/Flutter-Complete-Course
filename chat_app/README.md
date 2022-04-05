@@ -13,4 +13,8 @@ A new Flutter project.
     - Auth With Firebase SDK
         - <img src="auth_with_firebase.png" height="600" width="300" max-width=70%>
     - Auth Logout
-        - <img src="auth_logout.png" height="600" width="300" max-width=70%>    
+        - <img src="auth_logout.png" height="600" width="300" max-width=70%>
+    - Chat Screen
+        - <img src="chat_screen.png" height="600" width="300" max-width=70%>     
+    - Signup Screen
+        - <img src="signup_screen.png" height="600" width="300" max-width=70%>  

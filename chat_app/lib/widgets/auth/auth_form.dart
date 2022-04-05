@@ -1,10 +1,14 @@
+import 'dart:io';
+
+import 'package:chat_app/widgets/pickers/user_image_picker.dart';
 import 'package:flutter/material.dart';
 
 class AuthForm extends StatefulWidget {
-  const AuthForm({Key? key, required this.submitFn, required this.isLoading}) : super(key: key);
+  const AuthForm({Key? key, required this.submitFn, required this.isLoading})
+      : super(key: key);
 
   final bool isLoading;
-  final void Function(String email, String password, String userName,
+  final void Function(String email, String password, String userName, File image,
       bool isLogin, BuildContext context) submitFn;
 
   @override
@@ -16,20 +20,38 @@ class _AuthFormState extends State<AuthForm> {
   var _isLogin = true;
   String _userEmail = '';
   String _userName = '';
+
   String _userPassword = '';
+  var _userImageFile;
+
+  void _pickedImage(File image) {
+    _userImageFile = image;
+  }
 
   void _trySubmit() {
     final isValid = _formKey.currentState!.validate();
     FocusScope.of(context).unfocus();
+    if (_userImageFile == null && !_isLogin) {
+      ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+        content: const Text('Please pick an image.'),
+        backgroundColor: Theme.of(context).errorColor,
+        )
+        );
+      return;
+    }
 
     if (isValid) {
       _formKey.currentState!.save();
       // Use those values to send our auth request ...
-      widget.submitFn(_userEmail.trim(), _userPassword.trim(), _userName.trim(),
-          _isLogin, context);
-      print(_userEmail);
-      print(_userName);
-      print(_userPassword);
+      widget.submitFn(_userEmail.trim(),
+       _userPassword.trim(),
+        _userName.trim(),
+         _userImageFile,
+          _isLogin,
+           context);
+      // print(_userEmail);
+      // print(_userName);
+      // print(_userPassword);
     }
   }
 
@@ -44,6 +66,7 @@ class _AuthFormState extends State<AuthForm> {
           child: Form(
             key: _formKey,
             child: Column(mainAxisSize: MainAxisSize.min, children: [
+              if (!_isLogin) UserImagePicker(imagePickFn: _pickedImage,),
               TextFormField(
                 key: const ValueKey('email'),
                 validator: (value) {
@@ -93,31 +116,30 @@ class _AuthFormState extends State<AuthForm> {
               const SizedBox(
                 height: 12,
               ),
-              if(widget.isLoading)
-              const CircularProgressIndicator(),
-              if(!widget.isLoading)
-              ElevatedButton(
-                child: Text(
-                  _isLogin ? 'Login' : 'Signup',
-                  style: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+              if (widget.isLoading) const CircularProgressIndicator(),
+              if (!widget.isLoading)
+                ElevatedButton(
+                  child: Text(
+                    _isLogin ? 'Login' : 'Signup',
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  )),
+                  onPressed: _trySubmit,
                 ),
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                )),
-                onPressed: _trySubmit,
-              ),
-              if(!widget.isLoading)
-              TextButton(
-                  onPressed: () {
-                    setState(() {
-                      _isLogin = !_isLogin;
-                    });
-                  },
-                  child: Text(_isLogin
-                      ? 'Create new account'
-                      : 'Already I have an account? Login'))
+              if (!widget.isLoading)
+                TextButton(
+                    onPressed: () {
+                      setState(() {
+                        _isLogin = !_isLogin;
+                      });
+                    },
+                    child: Text(_isLogin
+                        ? 'Create new account'
+                        : 'Already I have an account? Login'))
             ]),
           ),
         ),

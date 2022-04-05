@@ -12,19 +12,21 @@ class NewMessage extends StatefulWidget {
 class _NewMessageState extends State<NewMessage> {
   final _controller = TextEditingController();
   var _enteredMessage = '';
-  void _sendMessage() async{
+  void _sendMessage() async {
     // Close the keyboard
     FocusScope.of(context).unfocus();
     //Getting UserId
     final user = FirebaseAuth.instance.currentUser!;
+    final userData =
+        await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
     // Data send to firestore
-    FirebaseFirestore.instance
-        .collection('chat')
-        .add({
-          'text': _enteredMessage,
-          'createdAt':Timestamp.now(),
-          'userId': user.uid
-          });
+    FirebaseFirestore.instance.collection('chat').add({
+      'text': _enteredMessage,
+      'createdAt': Timestamp.now(),
+      'userId': user.uid,
+      'username': userData['username'],
+      'userImage': userData['image_url'],
+    });
     _controller.clear();
   }
 
@@ -46,7 +48,10 @@ class _NewMessageState extends State<NewMessage> {
         )),
         IconButton(
           onPressed: _enteredMessage.trim().isEmpty ? null : _sendMessage,
-          icon: const Icon(Icons.send),
+          icon: const Icon(
+            Icons.send,
+            color: Colors.pink,
+          ),
           color: Theme.of(context).primaryColor,
         )
       ]),
