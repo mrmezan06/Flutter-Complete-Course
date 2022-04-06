@@ -8,7 +8,7 @@ class AuthForm extends StatefulWidget {
       : super(key: key);
 
   final bool isLoading;
-  final void Function(String email, String password, String userName, File image,
+  final void Function(String email, String password, String userName, File? image,
       bool isLogin, BuildContext context) submitFn;
 
   @override

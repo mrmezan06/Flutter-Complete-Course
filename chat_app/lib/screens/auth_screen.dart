@@ -20,7 +20,7 @@ class _AuthScreenState extends State<AuthScreen> {
   var _isLoading = false;
 
   void _submitAuthForm(String email, String password, String username,
-      File image, bool isLogin, BuildContext context) async {
+      File? image, bool isLogin, BuildContext context) async {
     UserCredential authResult;
     // Pushing Firebase in here
     try {
@@ -31,17 +31,18 @@ class _AuthScreenState extends State<AuthScreen> {
         // Existing user
         authResult = await _auth.signInWithEmailAndPassword(
             email: email, password: password);
+        print(email);
       } else {
         // Get PlayerID for OneSignal
         var deviceState = await OneSignal.shared.getDeviceState();
 
-          if (deviceState == null || deviceState.userId == null) {
-            return;
-          }
+        if (deviceState == null || deviceState.userId == null) {
+          return;
+        }
 
-          var playerId = deviceState.userId!;
+        var playerId = deviceState.userId!;
 
-          // Onesignal Id End
+        // Onesignal Id End
 
         // New user
         authResult = await _auth.createUserWithEmailAndPassword(
@@ -51,8 +52,7 @@ class _AuthScreenState extends State<AuthScreen> {
             .ref()
             .child('user_image')
             .child(authResult.user!.uid + '.jpg');
-        await ref.putFile(image).whenComplete(
-            () => null);
+        await ref.putFile(image!).whenComplete(() => null);
 
         final url = await ref.getDownloadURL();
 
