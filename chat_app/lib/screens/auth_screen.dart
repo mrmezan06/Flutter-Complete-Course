@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -31,6 +32,17 @@ class _AuthScreenState extends State<AuthScreen> {
         authResult = await _auth.signInWithEmailAndPassword(
             email: email, password: password);
       } else {
+        // Get PlayerID for OneSignal
+        var deviceState = await OneSignal.shared.getDeviceState();
+
+          if (deviceState == null || deviceState.userId == null) {
+            return;
+          }
+
+          var playerId = deviceState.userId!;
+
+          // Onesignal Id End
+
         // New user
         authResult = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
@@ -54,6 +66,7 @@ class _AuthScreenState extends State<AuthScreen> {
           'username': username,
           'email': email,
           'image_url': url.toString(),
+          'onesignalId': playerId,
         });
       }
     } on PlatformException catch (error) {

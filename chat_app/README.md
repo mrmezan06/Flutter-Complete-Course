@@ -18,3 +18,6 @@ A new Flutter project.
         - <img src="chat_screen.png" height="600" width="300" max-width=70%>     
     - Signup Screen
         - <img src="signup_screen.png" height="600" width="300" max-width=70%>  
+    - Notification Screen
+        - <img src="notification.png" height="600" width="300" max-width=70%>  
+        - <img src="notification2.png" height="600" width="300" max-width=70%>  
