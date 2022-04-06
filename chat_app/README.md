@@ -11,7 +11,7 @@ A new Flutter project.
         - <img src="auth_validation_success.png" height="600" width="300" max-width=70%>
         - <img src="auth_validation_failed.png" height="600" width="300" max-width=70%>
     - Auth With Firebase SDK
-        - <img src="auth_with_firebase.png" height="600" width="300" max-width=70%>
+        - <img src="auth_with_firebase.png" height="600" width="500" max-width=70%>
     - Auth Logout
         - <img src="auth_logout.png" height="600" width="300" max-width=70%>
     - Chat Screen
