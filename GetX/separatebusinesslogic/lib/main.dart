@@ -23,7 +23,20 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    MyController myController = Get.put(MyController());
+     MyController myController = Get.put(MyController());
+    // permanent: true alive the instance throughout the app
+    // MyController myController = Get.put(MyController(), tag: 'instance1', permanent: true);
+
+    // Get.lazyPut(() => MyController(), tag: 'instance2', fenix: true);
+    // MyController myController = Get.find(tag: 'instance2');
+
+    // Async Task
+    // Get.putAsync<MyController>(
+    //   () async => await MyController(),
+    // ); 
+
+    //Get.create<MyController>((() => MyController()));
+
     return Scaffold(
       appBar: AppBar(title: const Text('Controller of GetX')),
       body: Center(
@@ -61,10 +74,9 @@ class HomePage extends StatelessWidget {
                   'Increment',
                   style: TextStyle(color: Colors.white),
                 )),
-
-                TextField(
-                  onChanged: (value) => myController.increment(),
-                )
+            TextField(
+              onChanged: (value) => myController.increment(),
+            )
           ],
         ),
       ),
