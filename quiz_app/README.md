@@ -13,18 +13,24 @@
    - Background color
    - Context Passing
    - Example :
-        - `final snackbar = SnackBar(
-          content: const Text("Incorrect!"),
-          backgroundColor: Colors.deepOrange,
-          duration: Duration(milliseconds: 500),
-          );
-          ScaffoldMessenger.of(context).showSnackBar(snackbar);`
+        -
+          ```js
+          final snackbar = SnackBar(
+            content: const Text("Incorrect!"),
+            backgroundColor: Colors.deepOrange,
+            duration: Duration(milliseconds: 500),
+            );
+          ScaffoldMessenger.of(context).showSnackBar(snackbar);
+          ```
  - Elevated Button
    - Style
      - Example : 
-       - `ElevatedButton.styleFrom(
-       primary: Colors.blueGrey.shade900),
-       )`
+       -
+       ```js
+         ElevatedButton.styleFrom(
+            primary: Colors.blueGrey.shade900
+         )
+       ```
    - onPressed method
    - Child
       - Example :
