@@ -12,16 +12,16 @@
    - Duration functionality
    - Background color
    - Context Passing
-   - Example :
-        -
-          ```js
-          final snackbar = SnackBar(
+     - Example :
+       ```
+           final snackbar = SnackBar(
             content: const Text("Incorrect!"),
             backgroundColor: Colors.deepOrange,
             duration: Duration(milliseconds: 500),
             );
           ScaffoldMessenger.of(context).showSnackBar(snackbar);
-          ```
+        ```
+          
  - Elevated Button
    - Style
      - Example : 
