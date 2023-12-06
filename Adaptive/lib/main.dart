@@ -13,51 +13,63 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Adaptive Widget Page'),
+      home: const MyHome(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class MyHome extends StatefulWidget {
+  const MyHome({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHome> createState() => _MyHomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-
+class _MyHomeState extends State<MyHome> {
+  var val = 1.0;
+  var isOn = true;
+  var sOn = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Slider.adaptive(
-                value: 1,
-                onChanged: (double newValue){
-
-                }
-                ),
-            SwitchListTile.adaptive(
-              title: const Text("Switch List Tile"),
-                value: true,
-                onChanged: (bool newValue){
-                }
-            ),
-            Switch.adaptive(value: true, onChanged: (bool newValue){}),
-            Icon(Icons.adaptive.share),
-            const CircularProgressIndicator.adaptive()
-          ],
+        appBar: AppBar(
+          title: const Text("Adaptive Widget"),
         ),
-      )
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Slider.adaptive(
+                  value: val,
+                  onChanged: (double newValue){
+                   setState(() {
+                     val = newValue;
+                   });
+                  }
+              ),
+              SwitchListTile.adaptive(
+                  title: const Text("Switch List Tile"),
+                  value: isOn,
+                  onChanged: (bool newValue){
+                    setState(() {
+                      isOn = newValue;
+                    });
+                  }
+              ),
+              Switch.adaptive(value: sOn, onChanged: (bool newValue){
+                setState(() {
+                  sOn = newValue;
+                });
+              }),
+              Icon(Icons.adaptive.share),
+              const CircularProgressIndicator.adaptive()
+            ],
+          ),
+        )
     );
+
+
   }
 }
+
